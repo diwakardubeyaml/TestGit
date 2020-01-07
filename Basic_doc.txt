@@ -130,3 +130,368 @@ Branch 'master' set up to track remote branch 'master' from 'origin'.
 
 DINKAR@DINKAR-PC MINGW64 /c/git/TestGit (master)
 $
+DINKAR@DINKAR-PC MINGW64 ~
+$ cd /c
+
+DINKAR@DINKAR-PC MINGW64 /c
+$ ls
+'!qhlogs.doc'               Hotfix/          PerfLogs/
+'$Recycle.Bin'/             Intel/          'Program Files'/
+ AVScanner.ini              logs/           'Program Files (x86)'/
+ Config.Msi/                Microgaming/     ProgramData/
+'Documents and Settings'@   mini-agent.txt   Recovery/
+ Drivers/                   MSOCache/       'System Volume Information'/
+ ftconfig.ini               NetworkCfg.xml   Users/
+ git/                       OneDriveTemp/    Windows/
+ hiberfil.sys               pagefile.sys
+
+DINKAR@DINKAR-PC MINGW64 /c
+$ cd git/
+
+DINKAR@DINKAR-PC MINGW64 /c/git
+$ ls
+TestGit/
+
+DINKAR@DINKAR-PC MINGW64 /c/git
+$ ls
+TestGit/
+
+DINKAR@DINKAR-PC MINGW64 /c/git
+$ cd TestGit/
+
+DINKAR@DINKAR-PC MINGW64 /c/git/TestGit (master)
+$ ls
+Basic_doc.txt  README.md  test.txt
+
+DINKAR@DINKAR-PC MINGW64 /c/git/TestGit (master)
+$ git add Basic_doc.txt
+
+DINKAR@DINKAR-PC MINGW64 /c/git/TestGit (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   Basic_doc.txt
+
+
+DINKAR@DINKAR-PC MINGW64 /c/git/TestGit (master)
+$ git commit -m "knowledge document" Basic_doc.txt
+[master 840fdd3] knowledge document
+ 1 file changed, 132 insertions(+)
+ create mode 100644 Basic_doc.txt
+
+DINKAR@DINKAR-PC MINGW64 /c/git/TestGit (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+DINKAR@DINKAR-PC MINGW64 /c/git/TestGit (master)
+$ git push -u origin master
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 1.51 KiB | 773.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/diwakardubeyaml/TestGit.git
+   22fb4cd..840fdd3  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+DINKAR@DINKAR-PC MINGW64 /c/git/TestGit (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        test2.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+DINKAR@DINKAR-PC MINGW64 /c/git/TestGit (master)
+$ git add test2.txt
+
+DINKAR@DINKAR-PC MINGW64 /c/git/TestGit (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   test2.txt
+
+
+DINKAR@DINKAR-PC MINGW64 /c/git/TestGit (master)
+$ git commit -m "this is test2 first commit" test2.txt
+[master 186c066] this is test2 first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 test2.txt
+
+DINKAR@DINKAR-PC MINGW64 /c/git/TestGit (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+DINKAR@DINKAR-PC MINGW64 /c/git/TestGit (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   test.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+DINKAR@DINKAR-PC MINGW64 /c/git/TestGit (master)
+$ git checkout test.txt
+Updated 1 path from the index
+
+DINKAR@DINKAR-PC MINGW64 /c/git/TestGit (master)
+$ git checkout -f
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+DINKAR@DINKAR-PC MINGW64 /c/git/TestGit (master)
+$ git log
+commit 186c06654daa5f87ac381090a87d773449c0bae8 (HEAD -> master)
+Author: diwakardubeyaml <diwakardubeyaml@gmail.com>
+Date:   Tue Jan 7 10:15:41 2020 +0530
+
+    this is test2 first commit
+
+commit 840fdd382e965308c1da9d3a3c0b16f9cb2ef505 (origin/master, origin/HEAD)
+Author: diwakardubeyaml <diwakardubeyaml@gmail.com>
+Date:   Tue Jan 7 08:08:38 2020 +0530
+
+    knowledge document
+
+commit 22fb4cd176e5f68e1656189c9a56b5ec3e86a603
+Author: diwakardubeyaml <diwakardubeyaml@gmail.com>
+Date:   Mon Jan 6 22:49:47 2020 +0530
+
+    modified file first time
+
+commit 9e788c23dae551ff2f57122196ecf5404c7bac52
+Author: diwakardubeyaml <diwakardubeyaml@gmail.com>
+Date:   Mon Jan 6 22:38:55 2020 +0530
+
+    first commit
+
+commit c3b44166eea36ba40f054e8938d3479755f98cd0
+Author: diwakardubeyaml <58154986+diwakardubeyaml@users.noreply.github.com>
+Date:   Mon Jan 6 21:41:03 2020 +0530
+
+    Initial commit
+
+DINKAR@DINKAR-PC MINGW64 /c/git/TestGit (master)
+$ gi statu
+bash: gi: command not found
+
+DINKAR@DINKAR-PC MINGW64 /c/git/TestGit (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+DINKAR@DINKAR-PC MINGW64 /c/git/TestGit (master)
+$ pwd
+/c/git/TestGit
+
+DINKAR@DINKAR-PC MINGW64 /c/git/TestGit (master)
+$ git diff
+
+DINKAR@DINKAR-PC MINGW64 /c/git/TestGit (master)
+$ git checkin
+git: 'checkin' is not a git command. See 'git --help'.
+
+The most similar commands are
+        check-ignore
+        checkout
+
+DINKAR@DINKAR-PC MINGW64 /c/git/TestGit (master)
+$ git check-ignore
+fatal: no path specified
+
+DINKAR@DINKAR-PC MINGW64 /c/git/TestGit (master)
+$ git commit -a -m "skip git add commant to ad in staging area and this will directly commit the file"
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+DINKAR@DINKAR-PC MINGW64 /c/git/TestGit (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+DINKAR@DINKAR-PC MINGW64 /c/git/TestGit (master)
+$ git branch feature
+
+DINKAR@DINKAR-PC MINGW64 /c/git/TestGit (master)
+$ git branch
+  feature
+* master
+
+DINKAR@DINKAR-PC MINGW64 /c/git/TestGit (master)
+$ git checkout feature
+Switched to branch 'feature'
+
+DINKAR@DINKAR-PC MINGW64 /c/git/TestGit (feature)
+$ git status
+On branch feature
+nothing to commit, working tree clean
+
+DINKAR@DINKAR-PC MINGW64 /c/git/TestGit (feature)
+$ git status
+On branch feature
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   test2.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+DINKAR@DINKAR-PC MINGW64 /c/git/TestGit (feature)
+$ git add -A
+
+DINKAR@DINKAR-PC MINGW64 /c/git/TestGit (feature)
+$ git commit -m "comment added"
+[feature e324f5a] comment added
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+DINKAR@DINKAR-PC MINGW64 /c/git/TestGit (feature)
+$ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+DINKAR@DINKAR-PC MINGW64 /c/git/TestGit (master)
+$ git checkout feature
+Switched to branch 'feature'
+
+DINKAR@DINKAR-PC MINGW64 /c/git/TestGit (feature)
+$ git commit -m "added comment"
+On branch feature
+Changes not staged for commit:
+        modified:   test2.txt
+
+no changes added to commit
+
+DINKAR@DINKAR-PC MINGW64 /c/git/TestGit (feature)
+$ git commit -a -m "added comment"
+[feature 2fc89aa] added comment
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+DINKAR@DINKAR-PC MINGW64 /c/git/TestGit (feature)
+$ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+DINKAR@DINKAR-PC MINGW64 /c/git/TestGit (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+DINKAR@DINKAR-PC MINGW64 /c/git/TestGit (master)
+$ git checkout feature
+Switched to branch 'feature'
+
+DINKAR@DINKAR-PC MINGW64 /c/git/TestGit (feature)
+$ git status
+On branch feature
+nothing to commit, working tree clean
+
+DINKAR@DINKAR-PC MINGW64 /c/git/TestGit (feature)
+$ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+DINKAR@DINKAR-PC MINGW64 /c/git/TestGit (master)
+$ git merge
+Already up to date.
+
+DINKAR@DINKAR-PC MINGW64 /c/git/TestGit (master)
+$ git checkout feature
+Switched to branch 'feature'
+
+DINKAR@DINKAR-PC MINGW64 /c/git/TestGit (feature)
+$ git push -u origin feature
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (9/9), 790 bytes | 263.00 KiB/s, done.
+Total 9 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas: 100% (3/3), completed with 1 local object.
+remote:
+remote: Create a pull request for 'feature' on GitHub by visiting:
+remote:      https://github.com/diwakardubeyaml/TestGit/pull/new/feature
+remote:
+To https://github.com/diwakardubeyaml/TestGit.git
+ * [new branch]      feature -> feature
+Branch 'feature' set up to track remote branch 'feature' from 'origin'.
+
+DINKAR@DINKAR-PC MINGW64 /c/git/TestGit (feature)
+$ git status
+On branch feature
+Your branch is up to date with 'origin/feature'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   Basic_doc.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+DINKAR@DINKAR-PC MINGW64 /c/git/TestGit (feature)
+$ git commit -a -m "latest git document"
+[feature 3286e9b] latest git document
+ 1 file changed, 327 insertions(+)
+
+DINKAR@DINKAR-PC MINGW64 /c/git/TestGit (feature)
+$ git push -u origin master
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/diwakardubeyaml/TestGit.git
+   840fdd3..186c066  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+DINKAR@DINKAR-PC MINGW64 /c/git/TestGit (feature)
+$ status
+bash: status: command not found
+
+DINKAR@DINKAR-PC MINGW64 /c/git/TestGit (feature)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+DINKAR@DINKAR-PC MINGW64 /c/git/TestGit (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+DINKAR@DINKAR-PC MINGW64 /c/git/TestGit (master)
+$
